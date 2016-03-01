@@ -1,0 +1,47 @@
+<div id="head" ng-show="ready">
+
+</div>
+
+<div id="main" class="table-responsive" ng-show="ready">
+
+	<table class="table table-hover table-striped">
+
+		<tr>
+
+			<th ng-repeat="col in columns">
+
+				<a title="click to sort by&#13;this column" ng-click="sortBy(col)" ng-bind="col"></a>
+
+			</th>
+
+			<th></th>
+
+		</tr>
+
+		<tr ng-repeat="obj in data | orderBy:user.settings.sort track by $index">
+
+			<td ng-bind="obj.setting"></td>
+
+			<td ng-if="obj.type == 'textbox'" class="col-md-2">
+				
+				<input class="form-control "type="text" ng-model="obj.value"/>
+
+			</td>
+
+			<td ng-if="obj.type == 'option'" class="col-md-2">
+
+				<select class="form-control" ng-model="obj.value" ng-options="idx as val for (idx,val) in options[obj.setting]"></select>
+
+			</td>
+
+			<td>
+
+				<button type="button" class="btn btn-success" ng-click="save(obj)">Save</button>
+
+			</td>
+
+		</tr>
+
+	</table>
+
+</div>
