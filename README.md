@@ -4,7 +4,7 @@ This is still a work in progress!
 
 Porting the old system, into a single process, self contained Node application.
 
-Has is own (mine) NoSQL database, with store and collections created automatically.
+Has its own (mine) NoSQL database, with store and collections created automatically.
 
 Has a RESTful API with defined routes, most standard read,insert,update and remove.
 
